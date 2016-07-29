@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="..\sladiario\grafico.css"> -->
+    <script src="..\sladiario\lib\Chart.js"></script>
+    <script type="text/javascript" src="..\sladiario\lib\canvasjs.min.js"></script> 
+    <title>SLA DIÁRIO</title>
+    <canvas id="myChart" width="210px" height="80px"></canvas>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ["Atendidos", "Não Atendidos", "Pendente Empresa", "Desenvolvimento"],
+              datasets: [{
+
+                  label: 'SLA DIARIO',
+                  data: [14, 2, 3, 1],
+                  backgroundColor: [
+                      'rgba(0, 0, 140, 0.8)',
+                      'rgba(233, 0, 0, 0.8)',
+                      'rgba(100, 100, 100, 0.8)',
+                      'rgba(143, 132, 11, 0.8)'
+                  ],
+                  borderColor: [
+                      'rgba(0, 0, 140, 1)',
+                      'rgba(233, 0, 0, 1)',
+                      'rgba(100, 100, 100, 1)',
+                      'rgba(143, 132, 11, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero:true
+                      }
+                  }]
+              }
+          }
+      });
+    </script>
+</head>
+<body>
+  <div id="right"></div>
+</body>
+</html>
