@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="..\sladiario\grafico.css"> 
+    <script src="..\sladiario\lib\"></script>
+    <script type="text/javascript" src="..\sladiario\lib\canvasjs.min.js"></script> 
+    <script type="text/javascript">
+      
+      window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+          title:{
+            text: "SLA DIÁRIO"
+          },
+          animationEnabled: true,
+
+          legend:{
+            verticalAlign: "center",
+            horizontalAlign: "left",
+            fontSize: 20,
+            fontFamily: "Helvetica"        
+          },
+          theme: "theme2",
+          data: [
+          {        
+            type: "pie",       
+            indexLabelFontFamily: "Garamond",       
+            indexLabelFontSize: 14,
+            indexLabel: "{y} Tickets {label}",
+            startAngle: 37,      
+            showInLegend: true,
+            toolTipContent:"{y} Tickets {legendText}",
+            dataPoints: [
+              {  y: 14, legendText:"Atendidos", label: "Atendidos" },
+              {  y: 2, legendText:"Não Atendidos", description:"21391, 21583", label: "Não Atendidos" },
+              {  y: 2, legendText:"Pendente Empresa", label: "Pendente Empresa" },
+              {  y: 0, legendText:"Desenvolvimento" , label: "Desenvolvimento"}
+              
+            ]
+          }
+          ]
+        });
+        chart.render();
+      }
+      </script>
+ 
+</head>
+<body>
+  <div id="chartContainer"></div>
+  <div id="right">
+    
+  </div>
+</body>
+</html>

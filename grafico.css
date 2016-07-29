@@ -1,0 +1,14 @@
+#chartContainer{
+	height: 500px;
+	width: 100%;
+	position: relative;
+}
+
+#right{
+    background-color: white;
+    height: 60px;
+    border-radius: 5px;
+    width: 99.8%;
+    position: relative;
+    margin: 1px 2px 0px 1px;
+    }
