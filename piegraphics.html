@@ -1,151 +1,75 @@
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="..\sladiario\grafico.css">
-    <script src="..\sladiario\lib\Chart.js"></script>
-    <script src="..\sladiario\lib\\bootstrap-3.3.6-dist\js\bootstrap.min.js"></script>
-    <script type="text/javascript" src="..\sladiario\lib\canvasjs.min.js"></script> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>SLA DIÁRIO</title>
-    
+
+    <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+
+      
+
 </head>
+
 <body>
+    <div id="right"></div>
+      <canvas id="myChart1" width="900px" height="600px"></canvas>
+        <script>
+          var ctx = document.getElementById("myChart");
+          var myChart = new Chart(ctx, {
+              type: 'pie',
+              data: {
+                  labels: ['Atendidos', 'Não Atendidos', 'Pendente Empresa', 'Desenvolvimento'],
+                  datasets: [{
+                      showInLegend: true,
+                      data: [14, 2, 3, 1],
+                      backgroundColor: [
+                          'rgba(0, 0, 255, 0.8)',
+                          'rgba(233, 0, 0, 0.8)',
+                          'rgba(100, 100, 100, 0.8)',
+                          'rgba(143, 132, 11, 0.8)'
+                      ],
+                      borderColor: [
+                          'rgba(255, 255, 255, 1)',
+                          'rgba(255, 255, 255, 1)',
+                          'rgba(255, 255, 255, 1)',
+                          'rgba(255, 255, 255, 1)'
+                      ],
+                      borderWidth: 2
+                  }]
+              },
+              options: {
+                
+                title: {
+                  display: true,
+                  text: 'SLA DIÁRIO',
+                  fontSize: 52,
+                  position:'top'
+                },
+                legend: {
+                  position: 'right',
+                  labels: {
+                    boxwidth: 100,
+                    fontSize: 30
+                  }
+                },
+                tooltip: {
 
-  <canvas id="myChart1" width="240px" height="120px"></canvas>
-    <script>
-      var ctx = document.getElementById("myChart1");
-      var myChart1 = new Chart(ctx, {
-          type: 'pie',
-          data: {
-              labels: ['Atendidos', 'Não Atendidos', 'Pendente Empresa', 'Desenvolvimento'],
-              datasets: [{
-                  label: 'SLA DIARIO',
-                  data: [14, 2, 3, 1],
-                  backgroundColor: [
-                      'rgba(0, 0, 255, 0.8)',
-                      'rgba(233, 0, 0, 0.8)',
-                      'rgba(100, 100, 100, 0.8)',
-                      'rgba(143, 132, 11, 0.8)'
-                  ],
-                  borderColor: [
-                      'rgba(0, 0, 255, 1)',
-                      'rgba(233, 0, 0, 1)',
-                      'rgba(100, 100, 100, 1)',
-                      'rgba(143, 132, 11, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: {
-            
-            title: {
-              display: true,
-              text: 'SLA DIÁRIO',
-              fontSize: 52,
-              position:'top'
-            },
-
-            legend: {
-              position: 'bottom',
-              labels: {
-                boxwidth: 80,
-                fontSize: 22
+                },
+                responsive: false
               }
-            },
-          }
-      });
-    </script>
-  <div id="right"></div>
 
-    <canvas id="myChart2" width="240px" height="120px"></canvas>
-    <script>
-      var ctx = document.getElementById("myChart2");
-      var myChart2 = new Chart(ctx, {
-          type: 'pie',
-          data: {
-              labels: ['Atendidos', 'Não Atendidos', 'Pendente Empresa', 'Desenvolvimento'],
-              datasets: [{
-                  label: 'SLA DIARIO',
-                  data: [1, 0, 0, 0],
-                  backgroundColor: [
-                      'rgba(0, 0, 255, 0.8)',
-                      'rgba(233, 0, 0, 0.8)',
-                      'rgba(100, 100, 100, 0.8)',
-                      'rgba(143, 132, 11, 0.8)'
-                  ],
-                  borderColor: [
-                      'rgba(0, 0, 255, 1)',
-                      'rgba(233, 0, 0, 1)',
-                      'rgba(100, 100, 100, 1)',
-                      'rgba(143, 132, 11, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: {
-            
-            title: {
-              display: true,
-              text: 'SLA ANDERSON',
-              fontSize: 52,
-              position:'top'
-            },
+          });
+        </script>
+      </div>
 
-            legend: {
-              position: 'bottom',
-              labels: {
-                boxwidth: 80,
-                fontSize: 22
-              }
-            },
-          }
-      });
-    </script>
+    <script src="vendor/js/jquery-3.1.0.min.js"></script>
+    <script src="vendor/js/jquery.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <script src="vendor/js/Chart.min.js"></script>
 
-     <div id="right"></div>
-
-    <canvas id="myChart3" width="240px" height="120px"></canvas>
-    <script>
-      var ctx = document.getElementById("myChart3");
-      var myChart3 = new Chart(ctx, {
-          type: 'pie',
-          data: {
-              labels: ['Atendidos', 'Não Atendidos', 'Pendente Empresa', 'Desenvolvimento'],
-              datasets: [{
-                  label: 'SLA DIARIO',
-                  data: [3, 0, 2, 0],
-                  backgroundColor: [
-                      'rgba(0, 0, 255, 0.8)',
-                      'rgba(233, 0, 0, 0.8)',
-                      'rgba(100, 100, 100, 0.8)',
-                      'rgba(143, 132, 11, 0.8)'
-                  ],
-                  borderColor: [
-                      'rgba(0, 0, 255, 1)',
-                      'rgba(233, 0, 0, 1)',
-                      'rgba(100, 100, 100, 1)',
-                      'rgba(143, 132, 11, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: {
-            
-            title: {
-              display: true,
-              text: 'SLA RODRIGO',
-              fontSize: 52,
-              position:'top'
-            },
-
-            legend: {
-              position: 'bottom',
-              labels: {
-                boxwidth: 80,
-                fontSize: 22
-              }
-            },
-          }
-      });
-    </script>
 </body>
 </html>
